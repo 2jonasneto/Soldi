@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Soldi.Core.Base.Entity" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAQAAAAAAEAAAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Base\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.Conta">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAABAAAAIEAAEAAAA=</HashCode>
+      <FileName>Entities\Conta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.Usuario">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAgAAAAAACIAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.Cartao">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgEAgAAAAAABAAAAAEAAEAAAA=</HashCode>
+      <FileName>Entities\Cartao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

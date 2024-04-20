@@ -10,11 +10,12 @@ namespace Soldi.Core.Base
     {
       
 
-        public Guid Id { get; protected set; }
+        public Guid Id { get; protected set; } = Guid.NewGuid();
         public Guid UsuarioId { get; protected set; }
-        public DateTime UltimaAtualizacao { get; protected set; }
+        public DateTime UltimaAtualizacao { get; protected set; } = DateTime.Now;
         public string? Ip { get; protected set; }
-        
-        
+        public bool Ativo { get; protected set; }
+
+
     }
 }
