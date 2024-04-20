@@ -1,10 +1,12 @@
 ﻿
 
+using Soldi.Core.Enums;
+
 namespace Soldi.Core.Entities
 {
     public sealed class Conta : Entity
     {
-        public Conta(Guid usuarioId,  string? ip,  string? nome, decimal saldo, string? imagem) 
+        public Conta(Guid usuarioId, string? ip, string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
         {
             UsuarioId = usuarioId;
             Ip = ip;
@@ -12,14 +14,16 @@ namespace Soldi.Core.Entities
             Nome = nome;
             Saldo = saldo;
             Imagem = imagem;
+            TipoConta = tipoConta;
         }
-        public void AlterarConta( string? ip, bool ativo, string? nome, decimal saldo, string? imagem)
+        public void AlterarConta( string? ip, bool ativo, string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
         {
             Ip = ip;
             Ativo &= ativo;
             Nome = nome;
             Saldo = saldo;
             Imagem = imagem;
+            TipoConta = tipoConta;
         }
         public void DepositoSaldo(decimal saldo)
         {
@@ -32,7 +36,7 @@ namespace Soldi.Core.Entities
         public string? Nome { get; private set; }
         public decimal Saldo { get; private set; }
         public string? Imagem { get; private set; }
-
+        public ETipoConta TipoConta { get; private set; }
 
         public Usuario? Usuario { get; set; }
     }
