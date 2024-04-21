@@ -17,8 +17,9 @@ namespace Soldi.Core.Base
         public DateTime UltimaAtualizacao { get; protected set; } = DateTime.Now;
         public bool Ativo { get; protected set; } = true;
         public Guid UsuarioId { get; protected set; }
-       
 
-
+    
     }
+
+    
 }
