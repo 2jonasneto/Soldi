@@ -8,6 +8,10 @@ namespace Soldi.Core.Entities
 {
     public sealed class LancamentoRecorrente:Entity
     {
+        public LancamentoRecorrente(Guid usuarioId) : base(usuarioId)
+        {
+        }
+
         public string? Descricao { get; private set; }
         public decimal Valor { get; private set; }
         public DateTime Datainicial { get; private set; }
@@ -15,7 +19,7 @@ namespace Soldi.Core.Entities
         public Guid CategoriaId { get; private set; }
         public ETipoCategoria TipoLancamento { get; private set; }
         public string? Observacoes { get; private set; }
-        
+        public bool Pago { get;private set; }
     }
 
 

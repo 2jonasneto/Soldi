@@ -6,20 +6,17 @@ namespace Soldi.Core.Entities
 {
     public sealed class Conta : Entity
     {
-        public Conta(Guid usuarioId, string? ip, string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
+        public Conta(Guid usuarioId, string? nome, decimal saldo, string? imagem, ETipoConta tipoConta):base(usuarioId)
         {
-            UsuarioId = usuarioId;
-            Ip = ip;
             Ativo = true;
             Nome = nome;
             Saldo = saldo;
             Imagem = imagem;
             TipoConta = tipoConta;
         }
-        public void AlterarConta( string? ip, bool ativo, string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
+        public void AlterarConta( string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
         {
-            Ip = ip;
-            Ativo &= ativo;
+          
             Nome = nome;
             Saldo = saldo;
             Imagem = imagem;

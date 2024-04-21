@@ -2,6 +2,10 @@
 {
     public sealed class Lancamento:Entity
     {
+        public Lancamento(Guid usuarioId) : base(usuarioId)
+        {
+        }
+
         public string? Descricao { get; private set; }
         public string? Parcela { get; private set; }
         public decimal Valor { get; private set; }
