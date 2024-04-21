@@ -5,4 +5,4 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using Soldi.Core.Entities;
 global using Soldi.Core.Base;
-
+global using Soldi.Core.Enums;

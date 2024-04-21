@@ -1,32 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Soldi.Core.Base.Entity" Collapsed="true">
-    <Position X="6.25" Y="1" Width="1.5" />
+  <Class Name="Soldi.Core.Base.Entity">
+    <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAQAAAAAAEAAAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Base\Entity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Soldi.Core.Entities.Conta">
-    <Position X="3.25" Y="2" Width="1.5" />
+    <Position X="12" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAABAAAAIEAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAACAAAAAAACAABAAAAIEAAEAABA=</HashCode>
       <FileName>Entities\Conta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Soldi.Core.Entities.Usuario">
-    <Position X="9" Y="2.5" Width="1.5" />
+    <Position X="14.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAgAAAAAACIAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Entities\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Soldi.Core.Entities.Cartao">
-    <Position X="5.75" Y="3" Width="1.5" />
+    <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgEAgAAAAAABAAAAAEAAEAAAA=</HashCode>
       <FileName>Entities\Cartao.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Soldi.Core.Entities.Categoria">
+    <Position X="3.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAEAABAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.LancamentoRecorrente">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAgAAAAAEAAEAAAAAAAAAAQAAABAAEA=</HashCode>
+      <FileName>Entities\LancamentoRecorrente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.Lancamento">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAABAAgAAAAAEAAEAAAAAAAAAAQAAABAAEA=</HashCode>
+      <FileName>Entities\Lancamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Soldi.Core.Entities.Fatura">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAABAAAAAAAAEAAEAAAAAAAAAAAAAABAAEA=</HashCode>
+      <FileName>Entities\Fatura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Soldi.Core.Repositories.IContaRepository">
+    <Position X="19.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IContaRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Soldi.Core.Enums.ETipoCategoria">
+    <Position X="17.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Enums\ETipoCategoria.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Soldi.Core.Enums.ETipoConta">
+    <Position X="19" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAQAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ETipoConta.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

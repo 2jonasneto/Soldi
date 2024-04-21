@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Soldi.Core.Entities
 {
-    public class Cartao:Entity
+    public sealed class Cartao:Entity
     {
         public string? Nome { get; private set; }
         public string? Imagem { get; private set; }

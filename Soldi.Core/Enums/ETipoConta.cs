@@ -9,5 +9,5 @@ namespace Soldi.Core.Enums
     public enum ETipoConta
     {
         Poupança,Corrente,Investimento
-    }
+    }   
 }
