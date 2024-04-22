@@ -1,6 +1,6 @@
 ﻿namespace Soldi.Core.Entities
 {
-    public sealed class Fatura:Entity
+    public sealed class Fatura:Entity,IValidate
     {
         public Fatura(Guid usuarioId,  string? descricao, decimal valor, DateTime datainicial, Guid cartaoId, Guid categoriaId, string? observacoes) : base(usuarioId)
         {
@@ -19,6 +19,11 @@
             CartaoId = cartaoId;
             CategoriaId = categoriaId;
             Observacoes = observacoes;
+        }
+        public (bool status, string messagem) Validar()
+        {
+            if (Descricao == null || Descricao.Length < 2) return (false, "Nome deve possuir mais de 2 caracteres!");
+                      return (true, "OK");
         }
 
         public string? Descricao { get; private set; }

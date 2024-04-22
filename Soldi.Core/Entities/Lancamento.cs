@@ -2,8 +2,18 @@
 {
     public sealed class Lancamento:Entity
     {
-        public Lancamento(Guid usuarioId) : base(usuarioId)
+        public Lancamento(Guid usuarioId, string? descricao, string? parcela, decimal valor, DateTime datainicial, Guid contaId,
+            Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes, Guid lancamentoRecorrenteId) : base(usuarioId)
         {
+            Descricao = descricao;
+            Parcela = parcela;
+            Valor = valor;
+            Datainicial = datainicial;
+            ContaId = contaId;
+            CategoriaId = categoriaId;
+            TipoLancamento = tipoLancamento;
+            Observacoes = observacoes;
+            LancamentoRecorrenteId = lancamentoRecorrenteId;
         }
 
         public string? Descricao { get; private set; }
@@ -14,7 +24,7 @@
         public Guid CategoriaId { get; private set; }
         public ETipoCategoria TipoLancamento { get; private set; }
         public string? Observacoes { get; private set; }
-        
+        public Guid LancamentoRecorrenteId { get; private set; }
     }
 
 
