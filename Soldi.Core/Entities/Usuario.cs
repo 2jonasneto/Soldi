@@ -38,6 +38,14 @@ namespace Soldi.Core.Entities
         public DateTime? DataNascimento { get; private set; }
 
 
-        public IReadOnlyCollection<Cartao>? Cartao { get; set;}
+        public ICollection<Cartao>? Cartoes { get; }
+        public ICollection<Conta>? Contas { get; }
+        public ICollection<Lancamento>? Lancamentos { get; }
+        public ICollection<LancamentoRecorrente>? LancamentoRecorrentes { get; }
+        public ICollection<Fatura>? Faturas { get; }
+       
+
+
+
     }
 }
