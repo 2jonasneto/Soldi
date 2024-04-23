@@ -10,4 +10,8 @@
     <Folder Include="Base\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Soldi.Core\Soldi.Core.csproj" />
+  </ItemGroup>
+
 </Project>
