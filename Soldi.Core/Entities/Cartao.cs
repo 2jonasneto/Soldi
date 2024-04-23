@@ -17,20 +17,26 @@ namespace Soldi.Core.Entities
             DiaVencimento = diaVencimento;
             ContaPagamentoPadrao = contaPagamentoPadrao;
         }
-        public void AtualizarCartao( string? nome, string? imagem, int diaFechamento, int diaVencimento, Guid contaPagamentoPadrao)
+        public void Atualizar( string? nome, string? imagem, int diaFechamento, int diaVencimento, Guid contaPagamentoPadrao)
         {
             Nome = nome;
             Imagem = imagem;
             DiaFechamento = diaFechamento;
             DiaVencimento = diaVencimento;
             ContaPagamentoPadrao = contaPagamentoPadrao;
+            UltimaAtualizacao=DateTime.Now;
         }
-
+        public void desativar()
+        {
+            Ativo = false;
+            UltimaAtualizacao = DateTime.Now;
+        }
         public (bool status, string messagem) Validar()
         {
             if (Nome == null || Nome.Length < 2) return (false, "Nome deve possuir mais de 2 caracteres!");
             if (DiaFechamento== 0) return (false, "Informe o dia de fechamento!");
             if (DiaVencimento== 0) return (false, "Informe o dia de vencimento!");
+            if (UsuarioId == Guid.Empty) return (false, "Usuário não informado!");
 
             return (true, "OK");
         }

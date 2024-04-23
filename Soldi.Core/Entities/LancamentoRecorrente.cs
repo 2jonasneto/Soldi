@@ -21,6 +21,20 @@ namespace Soldi.Core.Entities
             Pago = pago;
         }
 
+        public void Atualizar(string? descricao, decimal valor, DateTime datainicial, Guid contaId,
+           Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes, bool pago) 
+        {
+            Descricao = descricao;
+            Valor = valor;
+            Datainicial = datainicial;
+            ContaId = contaId;
+            CategoriaId = categoriaId;
+            TipoLancamento = tipoLancamento;
+            Observacoes = observacoes;
+            Pago = pago;
+            UltimaAtualizacao = DateTime.Now;
+        }
+
         public string? Descricao { get; private set; }
         public decimal Valor { get; private set; }
         public DateTime Datainicial { get; private set; }

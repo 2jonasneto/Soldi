@@ -12,7 +12,7 @@ namespace Soldi.Core.Entities
             Cor = cor;
             Imagem = imagem;
         }
-        public void AlterarCategoria(string? nome, ETipoCategoria tipoCategoria, string? cor, string? imagem)
+        public void Atualizar(string? nome, ETipoCategoria tipoCategoria, string? cor, string? imagem)
         {
             Nome = nome;
             TipoCategoria = tipoCategoria;
@@ -23,6 +23,7 @@ namespace Soldi.Core.Entities
         public (bool status, string messagem) Validar()
         {
             if (Nome == null || Nome.Length < 3) return (false, "Nome deve possuir mais de 3 caracteres!");
+            if (TipoCategoria==0) return (false, "Informe uma categoria!");
             return (true, "OK");
         }
 

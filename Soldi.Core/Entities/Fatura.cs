@@ -11,7 +11,7 @@
             CategoriaId = categoriaId;
             Observacoes = observacoes;
         }
-        public void AtualizarFatura(string? descricao, decimal valor, DateTime datainicial, Guid cartaoId, Guid categoriaId, string? observacoes) 
+        public void Atualizar(string? descricao, decimal valor, DateTime datainicial, Guid cartaoId, Guid categoriaId, string? observacoes) 
         {
             Descricao = descricao;
             Valor = valor;
@@ -23,6 +23,9 @@
         public (bool status, string messagem) Validar()
         {
             if (Descricao == null || Descricao.Length < 2) return (false, "Nome deve possuir mais de 2 caracteres!");
+            if (CartaoId==Guid.Empty) return (false, "Informe o cartão!");
+            if (CategoriaId==Guid.Empty) return (false, "Informe a categoria!");
+          
                       return (true, "OK");
         }
 

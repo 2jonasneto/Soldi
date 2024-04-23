@@ -53,5 +53,15 @@ namespace Soldi.Tests
 
             Assert.False(result.status, result.messagem);
         }
+
+        [Fact]
+        [Trait("Usuario", "UsuarioId")]
+        public void SeInvalido_UsuarioId_RetornaFalso()
+        {
+            var usuario = new Usuario(Guid.Empty, "maria", "dsdasdasd", "12345678", null);
+            var result = usuario.Validar();
+
+            Assert.False(result.status, result.messagem);
+        }
     }
 }
