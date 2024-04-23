@@ -9,45 +9,57 @@ using System.Threading.Tasks;
 
 namespace Soldi.Data.Base
 {
-    public class GenericRepository<T> : IRepository<T> where T : Entity
+    public abstract class GenericRepository<T> : IRepository<T> where T : Entity
     {
-        private readonly SoldiDbContext db;
+        protected readonly SoldiDbContext db;
         public GenericRepository(SoldiDbContext db)
         {
             this.db = db;
         }
         public async Task<bool> CreateAsync(T entity)
         {
-          await db.AddAsync(entity);
+          db.Add(entity);
            return await db.SaveChangesAsync()==1;
         }
 
         public async Task<bool> CreateRangeAsync(List<T> entity)
         {
-          await  db.AddRangeAsync(entity);
+            db.AddRange(entity);
             return await db.SaveChangesAsync()==1;
         }
 
         public async Task<bool> DeleteAsync(T entity)
         {
-            await DeleteAsync(entity);
+            db.Remove(entity);
             return await db.SaveChangesAsync()==1;
         }
 
         public async Task<bool> DeleteRangeAsync(List<T> entity)
         {
-           await DeleteRangeAsync(entity);
+           db.RemoveRange(entity);
             return await db.SaveChangesAsync()==1;
         }
+        public async Task<bool> UpdateAsync(T entity)
+        {
+            db.Update(entity);
+            return await db.SaveChangesAsync() == 1;
+        }
+
+        public async Task<bool> UpdateRangeAsync(List<T> entity)
+        {
+            db.UpdateRange(entity);
+            return await db.SaveChangesAsync() == 1;
+        }
+
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
           return await db.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public Task<T> GetByIdAsync(Guid id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await db.Set<T>().AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
         }
 
         public async Task<IEnumerable<T>> GetEnumerableByQueryAsync(Expression<Func<T, bool>> expression)
@@ -61,14 +73,6 @@ namespace Soldi.Data.Base
             //  return await db.Set<T>().AsNoTracking().Where(expression).ToListAsync();
         }
 
-        public Task<bool> UpdateAsync(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> UpdateRangeAsync(List<T> entity)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

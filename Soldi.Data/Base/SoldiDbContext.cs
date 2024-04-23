@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Soldi.Core.Entities;
+﻿global using Microsoft.EntityFrameworkCore;
+global using Soldi.Core.Entities;
+global using Soldi.Data.Base;
 
 namespace Soldi.Data.Base
 {
