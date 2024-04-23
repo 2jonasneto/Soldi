@@ -16,9 +16,9 @@ namespace Soldi.Core.Base
         Task<bool> DeleteAsync(T entity);
         Task<bool> DeleteRangeAsync(List<T> entity);
         Task<T> GetByIdAsync(Guid id);
-        IEnumerable<Task<T>> GetAllAsync();
-        IEnumerable<Task<T>> GetEnumerableByQueryAsync(Expression<Func<T,bool>> expression);
-        IQueryable<Task<T>> GetQueriableByQueryAsync(Expression<Func<T,bool>> expression);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetEnumerableByQueryAsync(Expression<Func<T,bool>> expression);
+        Task<IQueryable<T>> GetQueriableByQueryAsync(Expression<Func<T,bool>> expression);
 
     }
 }
