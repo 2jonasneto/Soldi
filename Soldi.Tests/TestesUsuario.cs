@@ -1,9 +1,11 @@
+using Soldi.Core.Base;
 using Soldi.Core.Entities;
 
 namespace Soldi.Tests
 {
     public class TestesUsuario
     {
+        IService<ContaDTO> _conta;
 
         [Fact]
         [Trait("Usuario", "Nome")]

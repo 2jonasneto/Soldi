@@ -16,39 +16,33 @@ namespace Soldi.Data.Base
         {
             this.db = db;
         }
-        public async Task<bool> CreateAsync(T entity)
+        public void Create(T entity)
         {
           db.Add(entity);
-           return await db.SaveChangesAsync()==1;
         }
 
-        public async Task<bool> CreateRangeAsync(List<T> entity)
+        public void CreateRange(List<T> entity)
         {
             db.AddRange(entity);
-            return await db.SaveChangesAsync()==1;
         }
 
-        public async Task<bool> DeleteAsync(T entity)
+        public void Delete(T entity)
         {
             db.Remove(entity);
-            return await db.SaveChangesAsync()==1;
         }
 
-        public async Task<bool> DeleteRangeAsync(List<T> entity)
+        public  void DeleteRange(List<T> entity)
         {
            db.RemoveRange(entity);
-            return await db.SaveChangesAsync()==1;
         }
-        public async Task<bool> UpdateAsync(T entity)
+        public  void Update(T entity)
         {
             db.Update(entity);
-            return await db.SaveChangesAsync() == 1;
         }
 
-        public async Task<bool> UpdateRangeAsync(List<T> entity)
+        public  void UpdateRange(List<T> entity)
         {
             db.UpdateRange(entity);
-            return await db.SaveChangesAsync() == 1;
         }
 
 
@@ -73,6 +67,6 @@ namespace Soldi.Data.Base
             //  return await db.Set<T>().AsNoTracking().Where(expression).ToListAsync();
         }
 
-      
+     
     }
 }
