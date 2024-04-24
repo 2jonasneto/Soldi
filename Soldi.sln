@@ -6,14 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soldi.Core", "Soldi.Core\Soldi.Core.csproj", "{BD36D7B4-F853-4465-B7D3-10AB79926CE7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soldi.Tests", "Soldi.Tests\Soldi.Tests.csproj", "{F44DD56C-F933-4928-B473-81D5204D5276}"
-	ProjectSection(ProjectDependencies) = postProject
-		{202C50DA-E673-459B-B20C-D2909237CB1A} = {202C50DA-E673-459B-B20C-D2909237CB1A}
-		{FCFAF925-19AC-4896-B3BE-4E8329BC2185} = {FCFAF925-19AC-4896-B3BE-4E8329BC2185}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soldi.Data", "Soldi.Data\Soldi.Data.csproj", "{FCFAF925-19AC-4896-B3BE-4E8329BC2185}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soldi.Application", "Soldi.Application\Soldi.Application.csproj", "{202C50DA-E673-459B-B20C-D2909237CB1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soldi.Application", "Soldi.Application\Soldi.Application.csproj", "{202C50DA-E673-459B-B20C-D2909237CB1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soldi.Api", "Soldi.Api\Soldi.Api.csproj", "{46ED7356-48B6-4A5C-ADDD-003B9B40C0AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +35,10 @@ Global
 		{202C50DA-E673-459B-B20C-D2909237CB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{202C50DA-E673-459B-B20C-D2909237CB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{202C50DA-E673-459B-B20C-D2909237CB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46ED7356-48B6-4A5C-ADDD-003B9B40C0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46ED7356-48B6-4A5C-ADDD-003B9B40C0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46ED7356-48B6-4A5C-ADDD-003B9B40C0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46ED7356-48B6-4A5C-ADDD-003B9B40C0AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
