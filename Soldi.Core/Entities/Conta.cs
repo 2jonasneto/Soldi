@@ -14,11 +14,10 @@ namespace Soldi.Core.Entities
             Imagem = imagem;
             TipoConta = tipoConta;
         }
-        public void Atualizar( string? nome, decimal saldo, string? imagem, ETipoConta tipoConta)
+        public void Atualizar( string? nome,  string? imagem, ETipoConta tipoConta)
         {
           
             Nome = nome;
-            Saldo = saldo;
             Imagem = imagem;
             TipoConta = tipoConta;
             UltimaAtualizacao = DateTime.Now;
@@ -33,7 +32,11 @@ namespace Soldi.Core.Entities
             Saldo -= saldo;
             UltimaAtualizacao = DateTime.Now;
         }
-
+        public void DefinirSaldo(decimal saldo)
+        {
+            Saldo = saldo;
+            UltimaAtualizacao = DateTime.Now;
+        }
         public (bool status, string messagem) Validar()
         {
             if (Nome == null || Nome.Length < 2) return (false, "Nome deve possuir mais de 2 caracteres!");
