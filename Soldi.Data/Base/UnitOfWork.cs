@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Soldi.Data.Base
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private IContaRepository? _contaRepo;
         private IFaturaRepository? _faturaRepo;

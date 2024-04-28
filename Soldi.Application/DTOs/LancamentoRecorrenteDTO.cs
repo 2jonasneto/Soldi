@@ -1,4 +1,5 @@
-﻿using Soldi.Core.Enums;
+﻿using Soldi.Core.Entities;
+using Soldi.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

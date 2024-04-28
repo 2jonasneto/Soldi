@@ -5,7 +5,6 @@ namespace Soldi.Tests
 {
     public class TestesUsuario
     {
-        IService<ContaDTO> _conta;
 
         [Fact]
         [Trait("Usuario", "Nome")]

@@ -1,7 +1,9 @@
-﻿using AutoMapper;
-using Soldi.Application.Commands.Conta;
+﻿
+global using Soldi.Core.Entities;
+using AutoMapper;
+using Soldi.Application.Commands;
 using Soldi.Application.DTO;
-using Soldi.Core.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Soldi.Application.Base
 {
-    public class DTOMapping:Profile
+    public class DTOMapping : Profile
     {
         public DTOMapping()
         {

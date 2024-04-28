@@ -11,7 +11,7 @@ namespace Soldi.Data.Configuration
             builder.HasKey(x => x.Id);
             builder.Property(p => p.Descricao).IsRequired().HasMaxLength(100);
             builder.Property(p => p.Observacoes).IsRequired().HasMaxLength(300);
-
+            builder.Property(p => p.Valor).HasColumnType<decimal>("decimal(15,2)");
 
         }
 

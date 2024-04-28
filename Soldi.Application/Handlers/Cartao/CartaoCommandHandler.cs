@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Soldi.Application.Commands;
-using Soldi.Application.Commands.Cartao;
+using Soldi.Application.Commands;
 using Soldi.Application.DTO;
 using Soldi.Core.Base;
 using Soldi.Core.Entities;
@@ -11,12 +11,10 @@ namespace Soldi.Application.Handlers
 {
     public class CartaoCommandHandler : ICommandHandler<CartaoAdicionarCommand>, ICommandHandler<CartaoAtualizarCommand>
     {
-        private IMapper _mapper;
         private IUnitOfWork _uow;
 
-        public CartaoCommandHandler(IMapper mapper, IUnitOfWork uow)
+        public CartaoCommandHandler(IUnitOfWork uow)
         {
-            _mapper = mapper;
             _uow = uow;
         }
 

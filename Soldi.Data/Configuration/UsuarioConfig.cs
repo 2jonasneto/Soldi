@@ -16,7 +16,7 @@ namespace Soldi.Data.Configuration
 
             builder.HasMany(c=>c.Cartoes).WithOne(u=>u.Usuario).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(c=>c.Faturas).WithOne(u=>u.Usuario).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
-            builder.HasMany(c=>c.LancamentoRecorrentes).WithOne(u=>u.).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasMany(c=>c.LancamentoRecorrentes).WithOne(u=>u.Usuario).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(c=>c.Lancamentos).WithOne(u=>u.Usuario).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(c=>c.Contas).WithOne(u=>u.Usuario).HasForeignKey(u => u.UsuarioId).OnDelete(DeleteBehavior.Restrict);
 

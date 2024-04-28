@@ -8,7 +8,17 @@ namespace Soldi.Data.Base
     {
 
         public SoldiDbContext(DbContextOptions<SoldiDbContext> options):base(options) { }
-      
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SoldiDbContext).Assembly);
+           
+            base.OnModelCreating(modelBuilder);
+        }
 
         public DbSet<Cartao> Cartoes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
