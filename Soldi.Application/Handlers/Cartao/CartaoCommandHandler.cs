@@ -42,20 +42,24 @@ namespace Soldi.Application.Handlers
         public async Task<(bool Success, string Message)> Handle(CartaoAtualizarCommand command)
         {
             var conta = await _uow.CartaoRepository.GetByIdAsync(command.id);
-            conta.Atualizar(
-                contaPagamentoPadrao: command.contaPagamentoPadrao,
-                diaFechamento: command.diaFechamento,
-                diaVencimento: command.diaVencimento,
-                nome: command.nome,
-                imagem: command.imagem
-                );
+            if (conta!=null)
+            {
+                conta.Atualizar(
+                              contaPagamentoPadrao: command.contaPagamentoPadrao,
+                              diaFechamento: command.diaFechamento,
+                              diaVencimento: command.diaVencimento,
+                              nome: command.nome,
+                              imagem: command.imagem
+                              );
 
-            var result = conta.Validar();
-            if (result.status == false) return result;
+                var result = conta.Validar();
+                if (result.status == false) return result;
 
 
-            _uow.CartaoRepository.Update(conta);
-            return await _uow.Commit();
+                _uow.CartaoRepository.Update(conta);
+                return await _uow.Commit();
+            }
+            return (false, "Não encontrado!");
         }
 
        
