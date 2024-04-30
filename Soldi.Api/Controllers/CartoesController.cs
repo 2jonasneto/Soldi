@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Soldi.Application.Commands;
+using Soldi.Application.DTO;
 using Soldi.Core.Base;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,18 +12,26 @@ namespace Soldi.Api.Controllers
     public class CartoesController : ControllerBase
     {
         private readonly ICommandHandler<CartaoAdicionarCommand> _adicionar;
+        private readonly IQueryHandler<CartaoDTO> _query;
 
-        public CartoesController(ICommandHandler<CartaoAdicionarCommand> adicionar)
+        public CartoesController(ICommandHandler<CartaoAdicionarCommand> adicionar, IQueryHandler<CartaoDTO> query)
         {
             _adicionar = adicionar;
+            _query = query;
         }
 
-       
+
         // GET: api/<CartoesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<CartaoDTO>>> Get()
         {
-            return new List<string>();
+            var result =await _query.GetAll();
+
+            if (result.Success)
+            {
+                return Ok(result.t);
+            }
+            return BadRequest(result.Message);
         }
 
         // GET api/<CartoesController>/5

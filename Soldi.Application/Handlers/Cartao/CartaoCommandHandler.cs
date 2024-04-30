@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Soldi.Application.Commands;
-using Soldi.Application.Commands;
 using Soldi.Application.DTO;
 using Soldi.Core.Base;
 using Soldi.Core.Entities;

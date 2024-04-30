@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soldi.Core.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Soldi.Application.DTO
 {
-    public sealed class CartaoDTO
+    public sealed class CartaoDTO:IDTO
     {
         public Guid Id { get;  set; } 
         public DateTime UltimaAtualizacao { get;  set; } 
