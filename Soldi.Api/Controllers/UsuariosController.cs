@@ -12,14 +12,14 @@ namespace Soldi.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CartoesController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
-        private readonly ICommandHandler<CartaoAdicionarCommand> _adicionar;
-        private readonly ICommandHandler<CartaoAtualizarCommand> _atualizar;
-        private readonly ICartaoQueryHandler _query;
+        private readonly ICommandHandler<UsuarioAdicionarCommand> _adicionar;
+        private readonly ICommandHandler<UsuarioAtualizarCommand> _atualizar;
+        private readonly IUsuarioQueryHandler _query;
 
-        public CartoesController(ICommandHandler<CartaoAdicionarCommand> adicionar,
-            ICartaoQueryHandler query, ICommandHandler<CartaoAtualizarCommand> atualizar)
+        public UsuariosController(ICommandHandler<UsuarioAdicionarCommand> adicionar,
+            IUsuarioQueryHandler query, ICommandHandler<UsuarioAtualizarCommand> atualizar)
         {
             _adicionar = adicionar;
             _query = query;
@@ -27,9 +27,9 @@ namespace Soldi.Api.Controllers
         }
 
 
-        // GET: api/<CartoesController>
+        // GET: api/<UsuariosController>
         [HttpGet("Lista")]
-        public async Task<ActionResult<IEnumerable<CartaoDTO>>> GetAll()
+        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetAll()
         {
             var result =await _query.GetAll();
 
@@ -40,22 +40,22 @@ namespace Soldi.Api.Controllers
             return BadRequest(result.Message);
         }
 
-        // GET: api/<CartoesController>
-        [HttpGet("Nome/{nome}")]
-        public async Task<ActionResult<IEnumerable<CartaoDTO>>> GetByName(string nome)
+        // GET: api/<UsuariosController>
+        /*[HttpGet("Nome/{nome}")]
+        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetByName(string nome)
         {
-            var result = await _query.GetByExpression(CartaoQuery.GetByName(nome));
+            var result = await _query.GetByExpression(UsuarioQuery.GetByName(nome));
 
             if (result.Success)
             {
                 return Ok(result.t);
             }
             return BadRequest(result.Message);
-        }
+        }*/
 
-        // GET api/<CartoesController>/5
+        // GET api/<UsuariosController>/5
         [HttpGet("Id/{id:guid}")]
-        public async Task<ActionResult<CartaoDTO>> GetById(Guid id)
+        public async Task<ActionResult<UsuarioDTO>> GetById(Guid id)
         {
             var result = await _query.GetById(id);
 
@@ -66,27 +66,27 @@ namespace Soldi.Api.Controllers
             return BadRequest(result.Message);
         }
 
-        // POST api/<CartoesController>
+        // POST api/<UsuariosController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CartaoAdicionarCommand cartao)
+        public async Task<ActionResult> Post([FromBody] UsuarioAdicionarCommand Usuario)
         {
-          var result= await  _adicionar.Handle(cartao); 
+          var result= await  _adicionar.Handle(Usuario); 
 
             return result.Success? Created():BadRequest(result.Message);
 
         }
 
-        // PUT api/<CartoesController>/5
+        // PUT api/<UsuariosController>/5
         [HttpPut]
-        public async Task<ActionResult> Put( [FromBody] CartaoAtualizarCommand cartao)
+        public async Task<ActionResult> Put( [FromBody] UsuarioAtualizarCommand Usuario)
         {
-            var result = await _atualizar.Handle(cartao);
+            var result = await _atualizar.Handle(Usuario);
 
             return result.Success ? Created() : BadRequest(result.Message);
 
         }
 
-        // DELETE api/<CartoesController>/5
+        // DELETE api/<UsuariosController>/5
         [HttpDelete]
         public void Delete(int id)
         {

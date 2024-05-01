@@ -9,4 +9,5 @@ using System.Threading.Tasks;
 namespace Soldi.Application.Base
 {
     public interface ICartaoQueryHandler : IQueryHandler<CartaoDTO, Cartao> { }
+    public interface IUsuarioQueryHandler : IQueryHandler<UsuarioDTO, Usuario> { }
 }

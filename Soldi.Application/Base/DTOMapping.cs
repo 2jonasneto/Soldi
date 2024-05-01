@@ -7,6 +7,7 @@ using Soldi.Application.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,8 @@ namespace Soldi.Application.Base
     {
         public DTOMapping()
         {
-            CreateMap<Usuario, UsuarioDTO>().ReverseMap();
+            CreateMap<UsuarioDTO, Usuario>().ReverseMap();
+                
             CreateMap<Cartao, CartaoDTO>().ReverseMap();
 
             CreateMap<Conta, ContaDTO>();
@@ -29,5 +31,6 @@ namespace Soldi.Application.Base
             CreateMap<LancamentoRecorrente, LancamentoRecorrenteDTO>().ReverseMap();
             CreateMap<Categoria, CategoriaDTO>().ReverseMap();
         }
+       
     }
 }

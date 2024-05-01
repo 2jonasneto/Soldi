@@ -1,13 +1,13 @@
-﻿using Soldi.Core.Functions;
+﻿using Soldi.Core.Base;
+using Soldi.Core.Functions;
 
 namespace Soldi.Application.DTO
 {
-    public sealed class UsuarioDTO
+    public sealed class UsuarioDTO:IDTO
     {
         public Guid Id { get; set; }
         public DateTime UltimaAtualizacao { get; set; }
         public bool Ativo { get; set; }
-        public Guid UsuarioId { get; set; }
         public string? Nome { get;  set; }
 
         public string? Email { get;  set; }

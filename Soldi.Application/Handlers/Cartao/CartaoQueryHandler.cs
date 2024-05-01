@@ -55,7 +55,7 @@ namespace Soldi.Application.Handlers
         {
             try
             {
-                var data = await query.CartaoRepository.GetByIdAsync(id);
+                Cartao data = await query.CartaoRepository.GetByIdAsync(id);
                 return (true,data is null ?  "Sem registros na base":"", mapper.Map<CartaoDTO>(data));
             }
             catch (Exception ex)

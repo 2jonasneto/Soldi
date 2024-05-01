@@ -4,7 +4,7 @@ namespace Soldi.Core.Entities
 {
     public sealed class Usuario: Entity,IValidate
     {
-        public Usuario(Guid usuarioId, string? nome, string? email, string? senha, DateTime? dataNascimento) : base(usuarioId)
+        public Usuario(string? nome, string? email, string? senha, DateTime? dataNascimento,Guid usuarioId) : base(usuarioId)
         {
             Nome = nome;
             Email = email;

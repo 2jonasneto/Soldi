@@ -18,12 +18,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<SoldiDbContext>(options => options
 .UseSqlServer(builder.Configuration.GetConnectionString("strcon")));
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(DTOMapping).Assembly);
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICommandHandler<CartaoAdicionarCommand>,CartaoCommandHandler>();
 builder.Services.AddScoped<ICommandHandler<CartaoAtualizarCommand>,CartaoCommandHandler>();
+builder.Services.AddScoped<ICommandHandler<UsuarioAdicionarCommand>,UsuarioCommandHandler>();
+builder.Services.AddScoped<ICommandHandler<UsuarioAtualizarCommand>,UsuarioCommandHandler>();
+builder.Services.AddScoped<ICommandHandler<AlterarSenhaCommand>,UsuarioCommandHandler>();
 builder.Services.AddScoped<ICartaoQueryHandler, CartaoQueryHandler>();
+builder.Services.AddScoped<IUsuarioQueryHandler, UsuarioQueryHandler>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
