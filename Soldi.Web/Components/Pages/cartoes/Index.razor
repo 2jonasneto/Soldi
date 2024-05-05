@@ -1,0 +1,42 @@
+﻿@page "/cartoes"
+@using Soldi.Application.Base
+@using Soldi.Application.DTO
+@rendermode InteractiveServer
+@inject ICartaoQueryHandler cartoes
+
+<PageTitle>Cadastro de cartões</PageTitle>
+
+<h1>Cartoes cadastrados</h1>
+
+<table class="table data">
+    <thead class="table-dark">
+      <tr>
+          <th>Nome</th>
+      </tr>
+
+    </thead>
+    <tbody>
+        @foreach (CartaoDTO? item in lista)
+        {
+            <tr>
+                <td>
+                    @item.Nome;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code{
+    private List<CartaoDTO?> lista = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+       
+      var d = await cartoes.GetAll();
+        lista = d.t.ToList();
+       
+    }
+
+ 
+}
