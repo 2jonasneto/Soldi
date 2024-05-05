@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Soldi.Api/appsettings.json
+/Soldi.Web/appsettings.json
