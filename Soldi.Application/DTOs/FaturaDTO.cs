@@ -1,6 +1,8 @@
-﻿namespace Soldi.Application.DTO
+﻿using Soldi.Core.Base;
+
+namespace Soldi.Application.DTO
 {
-    public sealed class FaturaDTO
+    public sealed class FaturaDTO:IDTO
     {
         public Guid Id { get; set; }
         public DateTime UltimaAtualizacao { get; set; }

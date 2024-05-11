@@ -2,7 +2,9 @@
 {
     public sealed class Fatura : Entity, IValidate
     {
-        public Fatura(Guid usuarioId, string? descricao, decimal valor, DateTime datainicial, Guid cartaoId, Guid categoriaId, string? observacoes) : base(usuarioId)
+        public Fatura(Guid usuarioId, string? descricao, decimal valor,
+            DateTime datainicial, Guid cartaoId, Guid categoriaId,
+            string? observacoes) : base(usuarioId)
         {
             Descricao = descricao;
             Valor = valor;
