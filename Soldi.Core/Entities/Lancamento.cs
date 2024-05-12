@@ -14,6 +14,7 @@
             TipoLancamento = tipoLancamento;
             Observacoes = observacoes;
             LancamentoRecorrenteId = lancamentoRecorrenteId;
+            Pago = false;
         }
         public void Atualizar( string? descricao, string? parcela, decimal valor, DateTime datainicial, Guid contaId,
           Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes, Guid lancamentoRecorrenteId) 
@@ -51,7 +52,7 @@
         public string? Observacoes { get; private set; }
         public Guid LancamentoRecorrenteId { get; private set; }
         public Usuario Usuario { get; set; }
-
+        public bool Pago { get; private set; }
         public LancamentoRecorrente LancamentoRecorrente { get; set; }
     }
 

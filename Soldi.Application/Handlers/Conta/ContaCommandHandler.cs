@@ -12,12 +12,12 @@ namespace Soldi.Application.Handlers
 {
     public class ContaCommandHandler : ICommandHandler<ContaAdicionarCommand>, ICommandHandler<ContaAtualizarCommand>
     {
-        private IMapper _mapper;
+       
         private IUnitOfWork _uow;
 
-        public ContaCommandHandler(IMapper mapper, IUnitOfWork uow)
+        public ContaCommandHandler(IUnitOfWork uow)
         {
-            _mapper = mapper;
+           
             _uow = uow;
         }
 

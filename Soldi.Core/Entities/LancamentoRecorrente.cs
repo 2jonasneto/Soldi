@@ -9,7 +9,7 @@ namespace Soldi.Core.Entities
     public sealed class LancamentoRecorrente:Entity,IValidate
     {
         public LancamentoRecorrente(Guid usuarioId, string? descricao, decimal valor, DateTime datainicial, Guid contaId,
-            Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes, bool pago) : base(usuarioId)
+            Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes) : base(usuarioId)
         {
             Descricao = descricao;
             Valor = valor;
@@ -18,11 +18,11 @@ namespace Soldi.Core.Entities
             CategoriaId = categoriaId;
             TipoLancamento = tipoLancamento;
             Observacoes = observacoes;
-            Pago = pago;
+          
         }
 
         public void Atualizar(string? descricao, decimal valor, DateTime datainicial, Guid contaId,
-           Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes, bool pago) 
+           Guid categoriaId, ETipoCategoria tipoLancamento, string? observacoes) 
         {
             Descricao = descricao;
             Valor = valor;
@@ -31,7 +31,7 @@ namespace Soldi.Core.Entities
             CategoriaId = categoriaId;
             TipoLancamento = tipoLancamento;
             Observacoes = observacoes;
-            Pago = pago;
+            
             UltimaAtualizacao = DateTime.Now;
         }
 
@@ -52,7 +52,7 @@ namespace Soldi.Core.Entities
         public Guid CategoriaId { get; private set; }
         public ETipoCategoria TipoLancamento { get; private set; }
         public string? Observacoes { get; private set; }
-        public bool Pago { get;private set; }
+       
 
         public Usuario Usuario { get; set; }
         public ICollection<Lancamento> Lancamentos { get; }

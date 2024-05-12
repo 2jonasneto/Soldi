@@ -18,14 +18,8 @@ namespace Soldi.Application.Base
         public DTOMapping()
         {
             CreateMap<UsuarioDTO, Usuario>().ReverseMap();
-                
             CreateMap<Cartao, CartaoDTO>().ReverseMap();
-
-            CreateMap<Conta, ContaDTO>();
-            CreateMap<ContaAdicionarCommand, Conta>();
-            CreateMap<ContaAtualizarCommand, Conta>();
-
-
+            CreateMap<Conta, ContaDTO>().ReverseMap();
             CreateMap<Fatura, FaturaDTO>().ReverseMap();
             CreateMap<Lancamento, LancamentoDTO>().ReverseMap();
             CreateMap<LancamentoRecorrente, LancamentoRecorrenteDTO>().ReverseMap();
